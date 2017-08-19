@@ -14,10 +14,12 @@ extension UIImageView {
     /// colors only. Black pixels correspond to bright pixels of original image, white to darker ones.
     /// - Parameter image: to be processed
     /// - Returns: black and white image or nil in case of error
-    func createThresholdedImage(from image: UIImage) -> UIImage? {
+    public func createThresholdedImage(from image: UIImage) -> UIImage? {
         
-        let kernelString = try! String(contentsOfFile: Bundle.main.path(forResource: "threshold",
-                                                                        ofType: "cikernel")!)
+        let bundle = Bundle(identifier: "bivanov.UIImageViewContrastLabel")!
+        
+        let kernelString = try! String(contentsOfFile: bundle.path(forResource: "threshold",
+                                                                   ofType: "cikernel")!)
         
         let kernel = CIColorKernel(string: kernelString)
         
@@ -47,7 +49,7 @@ extension UIImageView {
     /// regions on dark image region and vice versa.
     /// - Parameter text: text to be displayed
     /// - Parameter font: font to be used
-    func addContrastLabel(text: String,
+    public func addContrastLabel(text: String,
                           font: UIFont,
                           position: CGPoint = CGPoint.zero) {
         guard self.image != nil else {
@@ -76,11 +78,9 @@ extension UIImageView {
         textLayer.frame =  CGRect(x: self.bounds.size.width * position.x,
                                   y:  self.bounds.size.height * position.y,
                                   width: self.bounds.size.width,
-                                  height: self.bounds.size.height) //CGRect( self.bounds
+                                  height: self.bounds.size.height)
         textLayer.font = font
         textLayer.foregroundColor = UIColor.black.cgColor
-        
-        //        textLayer.allowsFontSubpixelQuantization = true
         
         textLayer.string = text
         

@@ -12,6 +12,13 @@
 		FE343E361F487ED0004AC92C /* UIImageViewContrastLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FE343E281F487ED0004AC92C /* UIImageViewContrastLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE343E401F487EDB004AC92C /* UIImageViewContrastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */; };
 		FE343E421F487F07004AC92C /* threshold.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = FE343E411F487F07004AC92C /* threshold.cikernel */; };
+		FE343E751F488E51004AC92C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E741F488E51004AC92C /* AppDelegate.swift */; };
+		FE343E771F488E51004AC92C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E761F488E51004AC92C /* ViewController.swift */; };
+		FE343E7A1F488E51004AC92C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE343E781F488E51004AC92C /* Main.storyboard */; };
+		FE343E7C1F488E51004AC92C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE343E7B1F488E51004AC92C /* Assets.xcassets */; };
+		FE343E7F1F488E51004AC92C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE343E7D1F488E51004AC92C /* LaunchScreen.storyboard */; };
+		FE343E8A1F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */; };
+		FE343E921F488EAF004AC92C /* UIImageViewContrastLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE343E251F487ED0004AC92C /* UIImageViewContrastLabel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,6 +28,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FE343E241F487ED0004AC92C;
 			remoteInfo = UIImageViewContrastLabel;
+		};
+		FE343E861F488E51004AC92C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE343E1C1F487ED0004AC92C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE343E711F488E51004AC92C;
+			remoteInfo = UIImageViewContrastLabelDemo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -33,6 +47,16 @@
 		FE343E351F487ED0004AC92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewContrastLabel.swift; sourceTree = "<group>"; };
 		FE343E411F487F07004AC92C /* threshold.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = threshold.cikernel; sourceTree = "<group>"; };
+		FE343E721F488E51004AC92C /* UIImageViewContrastLabelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageViewContrastLabelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE343E741F488E51004AC92C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE343E761F488E51004AC92C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE343E791F488E51004AC92C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE343E7B1F488E51004AC92C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE343E7E1F488E51004AC92C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE343E801F488E51004AC92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE343E851F488E51004AC92C /* UIImageViewContrastLabelDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIImageViewContrastLabelDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewContrastLabelDemoTests.swift; sourceTree = "<group>"; };
+		FE343E8B1F488E51004AC92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +75,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE343E6F1F488E51004AC92C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE343E921F488EAF004AC92C /* UIImageViewContrastLabel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE343E821F488E51004AC92C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +98,8 @@
 			children = (
 				FE343E271F487ED0004AC92C /* UIImageViewContrastLabel */,
 				FE343E321F487ED0004AC92C /* UIImageViewContrastLabelTests */,
+				FE343E731F488E51004AC92C /* UIImageViewContrastLabelDemo */,
+				FE343E881F488E51004AC92C /* UIImageViewContrastLabelDemoTests */,
 				FE343E261F487ED0004AC92C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +109,8 @@
 			children = (
 				FE343E251F487ED0004AC92C /* UIImageViewContrastLabel.framework */,
 				FE343E2E1F487ED0004AC92C /* UIImageViewContrastLabelTests.xctest */,
+				FE343E721F488E51004AC92C /* UIImageViewContrastLabelDemo.app */,
+				FE343E851F488E51004AC92C /* UIImageViewContrastLabelDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +133,28 @@
 				FE343E351F487ED0004AC92C /* Info.plist */,
 			);
 			path = UIImageViewContrastLabelTests;
+			sourceTree = "<group>";
+		};
+		FE343E731F488E51004AC92C /* UIImageViewContrastLabelDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FE343E741F488E51004AC92C /* AppDelegate.swift */,
+				FE343E761F488E51004AC92C /* ViewController.swift */,
+				FE343E781F488E51004AC92C /* Main.storyboard */,
+				FE343E7B1F488E51004AC92C /* Assets.xcassets */,
+				FE343E7D1F488E51004AC92C /* LaunchScreen.storyboard */,
+				FE343E801F488E51004AC92C /* Info.plist */,
+			);
+			path = UIImageViewContrastLabelDemo;
+			sourceTree = "<group>";
+		};
+		FE343E881F488E51004AC92C /* UIImageViewContrastLabelDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */,
+				FE343E8B1F488E51004AC92C /* Info.plist */,
+			);
+			path = UIImageViewContrastLabelDemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +207,41 @@
 			productReference = FE343E2E1F487ED0004AC92C /* UIImageViewContrastLabelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FE343E711F488E51004AC92C /* UIImageViewContrastLabelDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE343E901F488E51004AC92C /* Build configuration list for PBXNativeTarget "UIImageViewContrastLabelDemo" */;
+			buildPhases = (
+				FE343E6E1F488E51004AC92C /* Sources */,
+				FE343E6F1F488E51004AC92C /* Frameworks */,
+				FE343E701F488E51004AC92C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIImageViewContrastLabelDemo;
+			productName = UIImageViewContrastLabelDemo;
+			productReference = FE343E721F488E51004AC92C /* UIImageViewContrastLabelDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE343E841F488E51004AC92C /* UIImageViewContrastLabelDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE343E911F488E51004AC92C /* Build configuration list for PBXNativeTarget "UIImageViewContrastLabelDemoTests" */;
+			buildPhases = (
+				FE343E811F488E51004AC92C /* Sources */,
+				FE343E821F488E51004AC92C /* Frameworks */,
+				FE343E831F488E51004AC92C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE343E871F488E51004AC92C /* PBXTargetDependency */,
+			);
+			name = UIImageViewContrastLabelDemoTests;
+			productName = UIImageViewContrastLabelDemoTests;
+			productReference = FE343E851F488E51004AC92C /* UIImageViewContrastLabelDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -163,6 +263,17 @@
 						DevelopmentTeam = GEG5UDEC2P;
 						ProvisioningStyle = Automatic;
 					};
+					FE343E711F488E51004AC92C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = GEG5UDEC2P;
+						ProvisioningStyle = Automatic;
+					};
+					FE343E841F488E51004AC92C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = GEG5UDEC2P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE343E711F488E51004AC92C;
+					};
 				};
 			};
 			buildConfigurationList = FE343E1F1F487ED0004AC92C /* Build configuration list for PBXProject "UIImageViewContrastLabel" */;
@@ -171,6 +282,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FE343E1B1F487ED0004AC92C;
 			productRefGroup = FE343E261F487ED0004AC92C /* Products */;
@@ -179,6 +291,8 @@
 			targets = (
 				FE343E241F487ED0004AC92C /* UIImageViewContrastLabel */,
 				FE343E2D1F487ED0004AC92C /* UIImageViewContrastLabelTests */,
+				FE343E711F488E51004AC92C /* UIImageViewContrastLabelDemo */,
+				FE343E841F488E51004AC92C /* UIImageViewContrastLabelDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +307,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE343E2C1F487ED0004AC92C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE343E701F488E51004AC92C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE343E7F1F488E51004AC92C /* LaunchScreen.storyboard in Resources */,
+				FE343E7C1F488E51004AC92C /* Assets.xcassets in Resources */,
+				FE343E7A1F488E51004AC92C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE343E831F488E51004AC92C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,6 +349,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE343E6E1F488E51004AC92C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE343E771F488E51004AC92C /* ViewController.swift in Sources */,
+				FE343E751F488E51004AC92C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE343E811F488E51004AC92C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE343E8A1F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -226,7 +374,31 @@
 			target = FE343E241F487ED0004AC92C /* UIImageViewContrastLabel */;
 			targetProxy = FE343E301F487ED0004AC92C /* PBXContainerItemProxy */;
 		};
+		FE343E871F488E51004AC92C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE343E711F488E51004AC92C /* UIImageViewContrastLabelDemo */;
+			targetProxy = FE343E861F488E51004AC92C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE343E781F488E51004AC92C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE343E791F488E51004AC92C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE343E7D1F488E51004AC92C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE343E7E1F488E51004AC92C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FE343E371F487ED0004AC92C /* Debug */ = {
@@ -399,6 +571,62 @@
 			};
 			name = Release;
 		};
+		FE343E8C1F488E51004AC92C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GEG5UDEC2P;
+				INFOPLIST_FILE = UIImageViewContrastLabelDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FE343E8D1F488E51004AC92C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GEG5UDEC2P;
+				INFOPLIST_FILE = UIImageViewContrastLabelDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FE343E8E1F488E51004AC92C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GEG5UDEC2P;
+				INFOPLIST_FILE = UIImageViewContrastLabelDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIImageViewContrastLabelDemo.app/UIImageViewContrastLabelDemo";
+			};
+			name = Debug;
+		};
+		FE343E8F1F488E51004AC92C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GEG5UDEC2P;
+				INFOPLIST_FILE = UIImageViewContrastLabelDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIImageViewContrastLabelDemo.app/UIImageViewContrastLabelDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -418,12 +646,30 @@
 				FE343E3B1F487ED0004AC92C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE343E3C1F487ED0004AC92C /* Build configuration list for PBXNativeTarget "UIImageViewContrastLabelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE343E3D1F487ED0004AC92C /* Debug */,
 				FE343E3E1F487ED0004AC92C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE343E901F488E51004AC92C /* Build configuration list for PBXNativeTarget "UIImageViewContrastLabelDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE343E8C1F488E51004AC92C /* Debug */,
+				FE343E8D1F488E51004AC92C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE343E911F488E51004AC92C /* Build configuration list for PBXNativeTarget "UIImageViewContrastLabelDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE343E8E1F488E51004AC92C /* Debug */,
+				FE343E8F1F488E51004AC92C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

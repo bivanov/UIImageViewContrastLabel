@@ -1,0 +1,16 @@
+kernel vec4 _threshold(sampler source_image) {
+    vec4 pixValue;
+    float brightness;
+    pixValue = sample(source_image, samplerCoord(source_image));
+    brightness = 0.2126 * pixValue.r + 0.7152 * pixValue.g + 0.0722 * pixValue.b;
+    if (pixValue.a == 0.0) {
+        pixValue.r = pixValue.g = pixValue.b = 0.0;
+        pixValue.a = 1.0;
+    } else if (brightness > 0.5) {
+        pixValue.r = pixValue.g = pixValue.b = 0.0;
+    } else {
+        pixValue.r = pixValue.g = pixValue.b = 1.0;
+    }
+
+    return pixValue;
+}

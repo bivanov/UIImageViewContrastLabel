@@ -10,6 +10,8 @@
 		FE343E2F1F487ED0004AC92C /* UIImageViewContrastLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE343E251F487ED0004AC92C /* UIImageViewContrastLabel.framework */; };
 		FE343E341F487ED0004AC92C /* UIImageViewContrastLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E331F487ED0004AC92C /* UIImageViewContrastLabelTests.swift */; };
 		FE343E361F487ED0004AC92C /* UIImageViewContrastLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FE343E281F487ED0004AC92C /* UIImageViewContrastLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE343E401F487EDB004AC92C /* UIImageViewContrastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */; };
+		FE343E421F487F07004AC92C /* threshold.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = FE343E411F487F07004AC92C /* threshold.cikernel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		FE343E2E1F487ED0004AC92C /* UIImageViewContrastLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIImageViewContrastLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE343E331F487ED0004AC92C /* UIImageViewContrastLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewContrastLabelTests.swift; sourceTree = "<group>"; };
 		FE343E351F487ED0004AC92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewContrastLabel.swift; sourceTree = "<group>"; };
+		FE343E411F487F07004AC92C /* threshold.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = threshold.cikernel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				FE343E281F487ED0004AC92C /* UIImageViewContrastLabel.h */,
 				FE343E291F487ED0004AC92C /* Info.plist */,
+				FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */,
+				FE343E411F487F07004AC92C /* threshold.cikernel */,
 			);
 			path = UIImageViewContrastLabel;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 					FE343E241F487ED0004AC92C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = GEG5UDEC2P;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					FE343E2D1F487ED0004AC92C = {
@@ -181,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE343E421F487F07004AC92C /* threshold.cikernel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE343E401F487EDB004AC92C /* UIImageViewContrastLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +333,7 @@
 		FE343E3A1F487ED0004AC92C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GEG5UDEC2P;
@@ -332,10 +342,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = UIImageViewContrastLabel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +355,7 @@
 		FE343E3B1F487ED0004AC92C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GEG5UDEC2P;
@@ -351,6 +364,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = UIImageViewContrastLabel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +376,7 @@
 		FE343E3D1F487ED0004AC92C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GEG5UDEC2P;
 				INFOPLIST_FILE = UIImageViewContrastLabelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +389,7 @@
 		FE343E3E1F487ED0004AC92C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GEG5UDEC2P;
 				INFOPLIST_FILE = UIImageViewContrastLabelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

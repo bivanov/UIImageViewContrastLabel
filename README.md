@@ -4,7 +4,9 @@ Swift extension for UIImageView that allows to draw contrast label upon image co
 
 ## Manual installation
 
-Download UIImageViewContrastLabel.swift and threshold.cikernel from UIImageViewContrastLabel folder, add them to your project
+Download UIImageViewContrastLabel.swift and threshold.cikernel from UIImageViewContrastLabel folder, add them to your project.
+
+Change `let bundle = Bundle(identifier: "bivanov.UIImageViewContrastLabel")!` to whatever bundle you're using in UIImageViewContrastLabel.swift
 
 ## Carthage installation
 

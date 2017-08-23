@@ -663,6 +663,7 @@
 				FE343E8D1F488E51004AC92C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE343E911F488E51004AC92C /* Build configuration list for PBXNativeTarget "UIImageViewContrastLabelDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -671,6 +672,7 @@
 				FE343E8F1F488E51004AC92C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

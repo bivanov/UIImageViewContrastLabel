@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         imageView.addContrastLabel(text: "Hello world!", font: UIFont(name: "Courier", size: 15.0)!)
+        
+/**
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { 
+            self.imageView.removeContrastLabel()
+        }
+*/
     }
 
     override func didReceiveMemoryWarning() {

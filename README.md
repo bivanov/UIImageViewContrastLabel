@@ -1,5 +1,7 @@
 # UIImageViewContrastLabel
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 Swift extension for UIImageView that allows to draw contrast label upon image content 
 
 ## Manual installation
@@ -37,6 +39,12 @@ let font = UIFont(name: "Courier", size: 15.0)!
 let point = CGPoint(x: 0.2, y: 0.5)
         
 imageView.addContrastLabel(text: text, font: font, position: point)
+```
+
+To remove contrast label from UIImageView, just call
+
+```
+imageView.removeContrastLabel()
 ```
 
 ## Demo screenshot

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [unowned self] in
 //            self.animateContrastLabel()
-            self.constrastLayer.textPosition = CGPoint(x: 0.5, y: 0.5)
+            self.constrastLayer.textPosition = CGPoint(x: 0.5, y: 0.7)
         }
 
     }

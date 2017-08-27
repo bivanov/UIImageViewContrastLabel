@@ -172,7 +172,6 @@ extension UIImageView {
         let thresholdLayer = CAContrastLabelLayer()
         thresholdLayer.frame = self.bounds
         thresholdLayer.font = font
-        thresholdLayer.textPosition = position
         thresholdLayer.text = text
         
         let context = CIContext(options: nil)
@@ -186,6 +185,8 @@ extension UIImageView {
         thresholdLayer.name = self.contrastLabelLayerName
         
         self.layer.addSublayer(thresholdLayer)
+        
+        thresholdLayer.textPosition = position
         
         return thresholdLayer
     }

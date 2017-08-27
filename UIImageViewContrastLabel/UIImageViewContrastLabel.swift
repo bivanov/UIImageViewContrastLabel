@@ -73,6 +73,7 @@ public class CAContrastLabelLayer: CALayer {
         
         self.textPosition = CGPoint.zero
         self.textLayer.foregroundColor = UIColor.black.cgColor
+        self.textLayer.alignmentMode = kCAAlignmentCenter
         self.mask = self.textLayer
     }
     
@@ -162,11 +163,6 @@ extension UIImageView {
             return nil
         }
         
-        guard position.x >= 0.0 && position.x <= 1.0 &&
-            position.y >= 0.0 && position.y <= 1.0 else {
-                return nil
-        }
-        
         let backgroundImage = self.image!
         
         let thresholdLayer = CAContrastLabelLayer()
@@ -175,7 +171,12 @@ extension UIImageView {
         thresholdLayer.text = text
         
         let context = CIContext(options: nil)
-        if let ciImage = self.createThresholdedImage(from: backgroundImage)?.ciImage {
+        if let ciImage = self.createThresholdedImage(from: backgroundImage)?
+            .ciImage?.applyingFilter("CIBoxBlur",
+                                     withInputParameters: [
+                                        kCIInputRadiusKey: 3.0
+                ]) {
+            
             if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
                 
                 thresholdLayer.image = cgImage

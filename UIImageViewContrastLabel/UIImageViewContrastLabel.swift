@@ -8,6 +8,63 @@
 
 import UIKit
 
+
+class ThresholdFilter: CIFilter {
+    
+    var inputImage: CIImage?
+    
+    override var name: String {
+        get {
+            return "ThresholdFilter"
+        }
+        set { }
+    }
+    
+    override var outputImage: CIImage? {
+        let bundle = Bundle(identifier: "bivanov.UIImageViewContrastLabel")!
+        
+        let kernelString = try! String(contentsOfFile: bundle.path(forResource: "threshold",
+                                                                   ofType: "cikernel")!)
+        
+        let blurParameters = [
+            kCIInputRadiusKey: 3.0
+        ]
+        
+        let kernel = CIColorKernel(string: kernelString)
+        
+        if let inputImage = self.inputImage {
+            
+            if #available(iOS 9.0, *) {
+                if let output = kernel?.apply(withExtent: inputImage.extent,
+                                              arguments: [CISampler(image: inputImage)]) {
+                    
+                    return output.applyingFilter("CIBoxBlur",
+                                                withInputParameters: blurParameters)
+                }
+            } else {
+                if let output = kernel?.apply(withExtent: inputImage.extent,
+                                              arguments: [inputImage]) {
+                    
+                    return output.applyingFilter("CIBoxBlur",
+                                                 withInputParameters: blurParameters)
+                }
+            }
+            
+        }
+        
+        return nil
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
+
+
 /// Layer that can display constrast label based on provided CGImage.
 /// Basic usage of CAContrastLabelLayer is with UIImageView.
 /// - Note: CAContrastLabelLayer properties are not animatable and it is not designed
@@ -42,15 +99,19 @@ public class CAContrastLabelLayer: CALayer {
     }
     
     /// Relative position of text inside of layer frame.
-    /// You may use values from 0 to 1 to determine x and y position.
+    /// You may use values from 0 to 1 to determine x and y position. If x or y value is
+    /// out of this range, new value will be ignored.
     public var textPosition: CGPoint {
         get {
             return CGPoint(x: self.textLayer.position.x / self.bounds.size.width,
                            y: self.textLayer.position.y / self.bounds.size.height)
         }
         set {
-            self.textLayer.position = CGPoint(x: self.bounds.size.width * newValue.x,
-                                              y: self.bounds.size.height * newValue.y)
+            if newValue.x >= 0.0 && newValue.x <= 1.0 &&
+                newValue.y >= 0.0 && newValue.y <= 1.0 {
+                self.textLayer.position = CGPoint(x: self.bounds.size.width * newValue.x,
+                                                  y: self.bounds.size.height * newValue.y)
+            }
         }
     }
     
@@ -67,7 +128,9 @@ public class CAContrastLabelLayer: CALayer {
         
         super.init()
         
+        self.textPosition = CGPoint.zero
         self.textLayer.foregroundColor = UIColor.black.cgColor
+        self.textLayer.alignmentMode = kCAAlignmentCenter
         self.mask = self.textLayer
     }
     
@@ -75,6 +138,8 @@ public class CAContrastLabelLayer: CALayer {
         self.textLayer = CATextLayer()
         
         super.init(coder: aDecoder)
+        
+        self.textPosition = CGPoint.zero
     }
     
     private func recalculateTextLayerFrame() {
@@ -94,13 +159,10 @@ public class CAContrastLabelLayer: CALayer {
                                           y: self.textLayer.frame.origin.y,
                                           width: bounds.width,
                                           height: bounds.height)
-            
-            print("Parent bounds are: \(self.bounds)")
-            print("New frame is: \(self.textLayer.frame)")
-            print("Position is: \(self.textLayer.position)")
         }
     }
 }
+
 
 extension UIImageView {
     
@@ -108,41 +170,6 @@ extension UIImageView {
         get {
             return "bivanov.UIImageViewContrastLabel.layer"
         }
-    }
-    
-    /// Create image from another image; resulted image is in black and white
-    /// colors only. Black pixels correspond to bright pixels of original image, white to darker ones.
-    /// - Parameter image: Image to be processed.
-    /// - Returns: Black and white image or nil in case of error.
-    private func createThresholdedImage(from image: UIImage) -> UIImage? {
-        
-        let bundle = Bundle(identifier: "bivanov.UIImageViewContrastLabel")!
-        
-        let kernelString = try! String(contentsOfFile: bundle.path(forResource: "threshold",
-                                                                   ofType: "cikernel")!)
-        
-        let kernel = CIColorKernel(string: kernelString)
-        
-        if let cgImage = image.cgImage {
-            let ciImage = CIImage(cgImage: cgImage)
-            
-            if #available(iOS 9.0, *) {
-                if let output = kernel?.apply(withExtent: ciImage.extent,
-                                              arguments: [CISampler(image: ciImage)]) {
-                    
-                    return UIImage(ciImage: output)
-                }
-            } else {
-                if let output = kernel?.apply(withExtent: ciImage.extent,
-                                              arguments: [ciImage]) {
-                    
-                    return UIImage(ciImage: output)
-                }
-            }
-            
-        }
-        
-        return nil
     }
     
     /// Adds contrast label to UIImageView; label's colors are contrast to image itself, e.g. it will have white
@@ -159,30 +186,33 @@ extension UIImageView {
             return nil
         }
         
-        guard position.x >= 0.0 && position.x <= 1.0 &&
-            position.y >= 0.0 && position.y <= 1.0 else {
-                return nil
-        }
-        
         let backgroundImage = self.image!
         
         let thresholdLayer = CAContrastLabelLayer()
         thresholdLayer.frame = self.bounds
         thresholdLayer.font = font
-        thresholdLayer.textPosition = position
         thresholdLayer.text = text
         
         let context = CIContext(options: nil)
-        if let ciImage = self.createThresholdedImage(from: backgroundImage)?.ciImage {
-            if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
-                
-                thresholdLayer.image = cgImage
+
+        if let cgImage = backgroundImage.cgImage {
+            
+            let ciImage = CIImage(cgImage: cgImage)
+            
+            let thresholdFilter = ThresholdFilter()
+            thresholdFilter.setValue(ciImage, forKey: kCIInputImageKey)
+            
+            if let thresholdedImage = thresholdFilter.outputImage,
+                let finalImage = context.createCGImage(thresholdedImage, from: thresholdedImage.extent) {
+                thresholdLayer.image = finalImage
             }
         }
 
         thresholdLayer.name = self.contrastLabelLayerName
         
         self.layer.addSublayer(thresholdLayer)
+        
+        thresholdLayer.textPosition = position
         
         return thresholdLayer
     }

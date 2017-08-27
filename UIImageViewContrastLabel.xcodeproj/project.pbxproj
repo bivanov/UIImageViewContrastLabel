@@ -264,7 +264,6 @@
 					};
 					FE343E711F488E51004AC92C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = GEG5UDEC2P;
 						ProvisioningStyle = Automatic;
 					};
 					FE343E841F488E51004AC92C = {
@@ -574,7 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GEG5UDEC2P;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIImageViewContrastLabelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemo;
@@ -587,7 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GEG5UDEC2P;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIImageViewContrastLabelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemo;

@@ -19,11 +19,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.constrastLayer = imageView.addContrastLabel(text: "Hello world!",
-                                               font: UIFont(name: "Courier", size: 30.0)!)
+                                                         font: UIFont(name: "Courier", size: 30.0)!,
+                                                         position: CGPoint(x: 0.5, y: 0.5))
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [unowned self] in
-            self.animateContrastLabel()
-//            self.constrastLayer.textPosition = CGPoint(x: 0.5, y: 0.5)
+//            self.animateContrastLabel()
+            self.constrastLayer.textPosition = CGPoint(x: 0.5, y: 0.7)
         }
 
     }

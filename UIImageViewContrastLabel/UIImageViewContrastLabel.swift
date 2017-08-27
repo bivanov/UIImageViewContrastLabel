@@ -42,15 +42,19 @@ public class CAContrastLabelLayer: CALayer {
     }
     
     /// Relative position of text inside of layer frame.
-    /// You may use values from 0 to 1 to determine x and y position.
+    /// You may use values from 0 to 1 to determine x and y position. If x or y value is
+    /// out of this range, new value will be ignored.
     public var textPosition: CGPoint {
         get {
             return CGPoint(x: self.textLayer.position.x / self.bounds.size.width,
                            y: self.textLayer.position.y / self.bounds.size.height)
         }
         set {
-            self.textLayer.position = CGPoint(x: self.bounds.size.width * newValue.x,
-                                              y: self.bounds.size.height * newValue.y)
+            if newValue.x >= 0.0 && newValue.x <= 1.0 &&
+                newValue.y >= 0.0 && newValue.y <= 1.0 {
+                self.textLayer.position = CGPoint(x: self.bounds.size.width * newValue.x,
+                                                  y: self.bounds.size.height * newValue.y)
+            }
         }
     }
     
@@ -67,6 +71,7 @@ public class CAContrastLabelLayer: CALayer {
         
         super.init()
         
+        self.textPosition = CGPoint.zero
         self.textLayer.foregroundColor = UIColor.black.cgColor
         self.mask = self.textLayer
     }
@@ -75,6 +80,8 @@ public class CAContrastLabelLayer: CALayer {
         self.textLayer = CATextLayer()
         
         super.init(coder: aDecoder)
+        
+        self.textPosition = CGPoint.zero
     }
     
     private func recalculateTextLayerFrame() {
@@ -94,10 +101,6 @@ public class CAContrastLabelLayer: CALayer {
                                           y: self.textLayer.frame.origin.y,
                                           width: bounds.width,
                                           height: bounds.height)
-            
-            print("Parent bounds are: \(self.bounds)")
-            print("New frame is: \(self.textLayer.frame)")
-            print("Position is: \(self.textLayer.position)")
         }
     }
 }
@@ -169,7 +172,6 @@ extension UIImageView {
         let thresholdLayer = CAContrastLabelLayer()
         thresholdLayer.frame = self.bounds
         thresholdLayer.font = font
-        thresholdLayer.textPosition = position
         thresholdLayer.text = text
         
         let context = CIContext(options: nil)
@@ -183,6 +185,8 @@ extension UIImageView {
         thresholdLayer.name = self.contrastLabelLayerName
         
         self.layer.addSublayer(thresholdLayer)
+        
+        thresholdLayer.textPosition = position
         
         return thresholdLayer
     }

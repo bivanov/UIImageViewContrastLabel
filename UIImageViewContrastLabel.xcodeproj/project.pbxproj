@@ -19,6 +19,8 @@
 		FE343E7F1F488E51004AC92C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE343E7D1F488E51004AC92C /* LaunchScreen.storyboard */; };
 		FE343E8A1F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */; };
 		FE343E921F488EAF004AC92C /* UIImageViewContrastLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE343E251F487ED0004AC92C /* UIImageViewContrastLabel.framework */; };
+		FEBACEE71F59DE33009BB606 /* ThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBACEE61F59DE33009BB606 /* ThresholdFilter.swift */; };
+		FEBACEE91F59DE68009BB606 /* CAContrastLabeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBACEE81F59DE68009BB606 /* CAContrastLabeLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		FE343E851F488E51004AC92C /* UIImageViewContrastLabelDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIImageViewContrastLabelDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewContrastLabelDemoTests.swift; sourceTree = "<group>"; };
 		FE343E8B1F488E51004AC92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBACEE61F59DE33009BB606 /* ThresholdFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdFilter.swift; sourceTree = "<group>"; };
+		FEBACEE81F59DE68009BB606 /* CAContrastLabeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAContrastLabeLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				FE343E291F487ED0004AC92C /* Info.plist */,
 				FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */,
 				FE343E411F487F07004AC92C /* threshold.cikernel */,
+				FEBACEE61F59DE33009BB606 /* ThresholdFilter.swift */,
+				FEBACEE81F59DE68009BB606 /* CAContrastLabeLayer.swift */,
 			);
 			path = UIImageViewContrastLabel;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 				FE343E6E1F488E51004AC92C /* Sources */,
 				FE343E6F1F488E51004AC92C /* Frameworks */,
 				FE343E701F488E51004AC92C /* Resources */,
+				FEBACEE51F59DCFD009BB606 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -330,12 +337,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FEBACEE51F59DCFD009BB606 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE343E201F487ED0004AC92C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FE343E401F487EDB004AC92C /* UIImageViewContrastLabel.swift in Sources */,
+				FEBACEE71F59DE33009BB606 /* ThresholdFilter.swift in Sources */,
+				FEBACEE91F59DE68009BB606 /* CAContrastLabeLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,6 +43,24 @@ let position = CGPoint(x: 0.2, y: 0.5)
 imageView.addContrastLabel(text: text, font: font, position: position)
 ```
 
+You can specify colors that will be used for "light" and "dark" parts of contrast label:
+
+```
+let darkPartsColor =
+	CIColor(red: 137.0 / 255.0, green: 32.0 / 255.0, blue: 29.0 / 255.0)
+let lightPartsColor =
+	CIColor(red: 19.0 / 255.0, green: 44.0 / 255.0, blue: 85.0 / 255.0)
+let position = CGPoint(x: 0.5, y: 0.5)
+        
+self.constrastLayer = imageView.addContrastLabel(text: "Hello world!",
+                                                 font: UIFont(name: "Helvetica", size: 45.0)!,
+                                                 position: position,
+                                                 darkPartsColor: darkPartsColor,
+                                                 lightPartsColor: lightPartsColor)
+```
+
+By default, these colors are white and black correspondingly.
+
 To remove contrast label from UIImageView, just call
 
 ```
@@ -92,7 +110,7 @@ CAContrastLabelLayer has `textPosition` property to control relative position of
 
 ## Demo screenshots
 
-<img src="https://cdn.rawgit.com/bivanov/UIImageViewContrastLabel/f34e3aee/Screenshots/Scrn1.png" alt="Demo screenshot 1" width="40%" height="40%"> <img src="https://cdn.rawgit.com/bivanov/UIImageViewContrastLabel/9d09fb1d/Screenshots/Scrn2.png" alt="Demo screenshot 2" width="40%" height="40%">
+<img src="https://github.com/bivanov/UIImageViewContrastLabel/blob/master/Screenshots/Scrn1.png" alt="Demo screenshot 1" width="40%" height="40%"> <img src="https://github.com/bivanov/UIImageViewContrastLabel/blob/master/Screenshots/Scrn3.png" alt="Demo screenshot 2" width="40%" height="40%">
 
 Demo image by [Katie Walker](https://www.flickr.com/photos/eilonwy77/9156784796/in/photolist-eX9V6W-4CugZT-6SaDQd-6JVfBq-o4HmKv-csUF5y-6ch3Yr-8gqyVs-8xY799-8gnqwK-89JCVc-89MUh1-nC5dLZ-3jHvV2-qseZKc-8xXWnu-6UNCRr-bTvNxK-8gnhwv-4nzMev-nFcAP-6PFSvP-aa2ypi-6hH4cT-e5zsAu-8vpBDL-g5BND-cA2i8m-Jh6Vr-aswLN5-6AE2po-8RuEMv-847bCY-7nKn9m-98Va1C-haGvas-amzQHW-9guVqe-dgUSwH-bX92t5-5d8zh4-9gouWH-5px1t-RvJ15n-6LUTvB-847bNU-qVd4i1-6ZqjKK-6DknPV-Rx8QT)
 

@@ -1,4 +1,4 @@
-kernel vec4 _threshold(sampler source_image) {
+kernel vec4 _threshold(sampler source_image, __color dark_parts_color, __color light_parts_color) {
     vec4 pixValue;
     float brightness;
     pixValue = sample(source_image, samplerCoord(source_image));
@@ -7,9 +7,13 @@ kernel vec4 _threshold(sampler source_image) {
         pixValue.r = pixValue.g = pixValue.b = 0.0;
         pixValue.a = 1.0;
     } else if (brightness > 0.5) {
-        pixValue.r = pixValue.g = pixValue.b = 0.0;
+        pixValue.r = dark_parts_color.r;
+        pixValue.g = dark_parts_color.g;
+        pixValue.b = dark_parts_color.b;
     } else {
-        pixValue.r = pixValue.g = pixValue.b = 1.0;
+        pixValue.r = light_parts_color.r;
+        pixValue.g = light_parts_color.g;
+        pixValue.b = light_parts_color.b;
     }
 
     return pixValue;

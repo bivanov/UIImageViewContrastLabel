@@ -19,11 +19,18 @@ extension UIImageView {
     /// - Parameter text: text to be displayed.
     /// - Parameter font: font to be used.
     /// - Parameter position: relative position (from 0 to 1 for both dimensions) for label to be drawn in parent frame.
+    /// - Parameter darkPartsColor: color that will be used in darker parts of contrast label.
+    /// - Parameter lightPartsColor: color that will be used in lighter parts of contrast label
+    /// - NOTE: You may easily use, for example, white color as `darkPartsColor` property 
+    /// and black color as `lightPartsColor`, but it may level desired effect.
+    /// - NOTE: UIImageView instance should have non-nil `image`
     /// - Returns: In case of success created layer; nil otherwise.
     @discardableResult
     public func addContrastLabel(text: String,
                                  font: UIFont,
-                                 position: CGPoint = CGPoint.zero) -> CAContrastLabelLayer? {
+                                 position: CGPoint = CGPoint.zero,
+                                 darkPartsColor: CIColor? = nil,
+                                 lightPartsColor: CIColor? = nil) -> CAContrastLabelLayer? {
         guard self.image != nil else {
             return nil
         }
@@ -42,6 +49,15 @@ extension UIImageView {
             let ciImage = CIImage(cgImage: cgImage)
             
             let thresholdFilter = ThresholdFilter()
+            
+            if let darkPartsColor = darkPartsColor {
+                thresholdFilter.darkPartsColor = darkPartsColor
+            }
+            
+            if let lightPartsColor = lightPartsColor {
+                thresholdFilter.lightPartsColor = lightPartsColor
+            }
+            
             thresholdFilter.setValue(ciImage, forKey: kCIInputImageKey)
             
             if let thresholdedImage = thresholdFilter.outputImage,

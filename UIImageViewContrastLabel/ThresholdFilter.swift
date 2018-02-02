@@ -10,7 +10,7 @@ import UIKit
 
 class ThresholdFilter: CIFilter {
     
-    var inputImage: CIImage?
+    @objc var inputImage: CIImage?
     var darkPartsColor: CIColor = CIColor(cgColor: UIColor.black.cgColor)
     var lightPartsColor: CIColor = CIColor(cgColor: UIColor.white.cgColor)
     
@@ -37,7 +37,7 @@ class ThresholdFilter: CIFilter {
             kCIInputRadiusKey: 3.0
         ]
         
-        let kernel = CIColorKernel(string: kernelString)
+        let kernel = CIColorKernel(source: kernelString)
         
         if let inputImage = self.inputImage {
             let arguments: [Any]
@@ -52,11 +52,11 @@ class ThresholdFilter: CIFilter {
                              self.lightPartsColor]
             }
             
-            if let output = kernel?.apply(withExtent: inputImage.extent,
+            if let output = kernel?.apply(extent: inputImage.extent,
                                           arguments: arguments) {
                 
                 return output.applyingFilter("CIBoxBlur",
-                                             withInputParameters: blurParameters)
+                                             parameters: blurParameters)
             }
             
         }

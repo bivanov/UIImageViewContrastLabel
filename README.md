@@ -14,6 +14,10 @@ Change `let bundle = Bundle(identifier: "bivanov.UIImageViewContrastLabel")!` to
 
 Add `github "bivanov/UIImageViewContrastLabel"` to your Cartfile
 
+## Swift versions support
+
+Releases before 1.0.5 support Swift3. All releases from 1.0.5 support Swift4.
+
 ## Usage 
 
 ### Basic usage

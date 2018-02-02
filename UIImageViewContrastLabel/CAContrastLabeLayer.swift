@@ -89,9 +89,9 @@ public class CAContrastLabelLayer: CALayer {
         if let text = self.text as NSString?,
             let font = self.font {
             
-            let attributes: [String: Any] =
-                [NSFontAttributeName: font,
-                 NSForegroundColorAttributeName: UIColor.black.cgColor]
+            let attributes: [NSAttributedStringKey: Any] =
+                [NSAttributedStringKey.font: font,
+                 NSAttributedStringKey.foregroundColor: UIColor.black.cgColor]
             
             let bounds = text.boundingRect(with: self.frame.size,
                                            options: .usesLineFragmentOrigin,

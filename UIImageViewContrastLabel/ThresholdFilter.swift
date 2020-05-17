@@ -14,13 +14,6 @@ class ThresholdFilter: CIFilter {
     var darkPartsColor: CIColor = CIColor(cgColor: UIColor.black.cgColor)
     var lightPartsColor: CIColor = CIColor(cgColor: UIColor.white.cgColor)
     
-    override var name: String {
-        get {
-            return "ThresholdFilter"
-        }
-        set { }
-    }
-    
     override var outputImage: CIImage? {
         let bundle = Bundle(identifier: "bivanov.UIImageViewContrastLabel")!
         

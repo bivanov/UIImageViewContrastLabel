@@ -20,7 +20,7 @@
 		FE343E8A1F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */; };
 		FE343E921F488EAF004AC92C /* UIImageViewContrastLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE343E251F487ED0004AC92C /* UIImageViewContrastLabel.framework */; };
 		FEBACEE71F59DE33009BB606 /* ThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBACEE61F59DE33009BB606 /* ThresholdFilter.swift */; };
-		FEBACEE91F59DE68009BB606 /* CAContrastLabeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBACEE81F59DE68009BB606 /* CAContrastLabeLayer.swift */; };
+		FEBACEE91F59DE68009BB606 /* CAContrastLabelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBACEE81F59DE68009BB606 /* CAContrastLabelLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,8 @@
 		FE343E891F488E51004AC92C /* UIImageViewContrastLabelDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewContrastLabelDemoTests.swift; sourceTree = "<group>"; };
 		FE343E8B1F488E51004AC92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBACEE61F59DE33009BB606 /* ThresholdFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdFilter.swift; sourceTree = "<group>"; };
-		FEBACEE81F59DE68009BB606 /* CAContrastLabeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAContrastLabeLayer.swift; sourceTree = "<group>"; };
+		FEBACEE81F59DE68009BB606 /* CAContrastLabelLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAContrastLabelLayer.swift; sourceTree = "<group>"; };
+		FEF6261924714EE7004A36C7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 		FE343E1B1F487ED0004AC92C = {
 			isa = PBXGroup;
 			children = (
+				FEF6261924714EE7004A36C7 /* README.md */,
 				FE343E271F487ED0004AC92C /* UIImageViewContrastLabel */,
 				FE343E321F487ED0004AC92C /* UIImageViewContrastLabelTests */,
 				FE343E731F488E51004AC92C /* UIImageViewContrastLabelDemo */,
@@ -127,7 +129,7 @@
 				FE343E3F1F487EDB004AC92C /* UIImageViewContrastLabel.swift */,
 				FE343E411F487F07004AC92C /* threshold.cikernel */,
 				FEBACEE61F59DE33009BB606 /* ThresholdFilter.swift */,
-				FEBACEE81F59DE68009BB606 /* CAContrastLabeLayer.swift */,
+				FEBACEE81F59DE68009BB606 /* CAContrastLabelLayer.swift */,
 			);
 			path = UIImageViewContrastLabel;
 			sourceTree = "<group>";
@@ -256,12 +258,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = bivanov;
 				TargetAttributes = {
 					FE343E241F487ED0004AC92C = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					FE343E2D1F487ED0004AC92C = {
@@ -272,13 +274,13 @@
 					};
 					FE343E711F488E51004AC92C = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					FE343E841F488E51004AC92C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = GEG5UDEC2P;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FE343E711F488E51004AC92C;
 					};
@@ -286,7 +288,7 @@
 			};
 			buildConfigurationList = FE343E1F1F487ED0004AC92C /* Build configuration list for PBXProject "UIImageViewContrastLabel" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -363,7 +365,7 @@
 			files = (
 				FE343E401F487EDB004AC92C /* UIImageViewContrastLabel.swift in Sources */,
 				FEBACEE71F59DE33009BB606 /* ThresholdFilter.swift in Sources */,
-				FEBACEE91F59DE68009BB606 /* CAContrastLabeLayer.swift in Sources */,
+				FEBACEE91F59DE68009BB606 /* CAContrastLabelLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +443,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -448,6 +451,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -501,6 +505,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -508,6 +513,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -554,12 +560,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -581,7 +588,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -620,10 +627,11 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIImageViewContrastLabelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -634,10 +642,11 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIImageViewContrastLabelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -652,7 +661,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIImageViewContrastLabelDemo.app/UIImageViewContrastLabelDemo";
 			};
 			name = Debug;
@@ -668,7 +677,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bivanov.UIImageViewContrastLabelDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIImageViewContrastLabelDemo.app/UIImageViewContrastLabelDemo";
 			};
 			name = Release;

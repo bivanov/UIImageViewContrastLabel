@@ -16,7 +16,7 @@ Add `github "bivanov/UIImageViewContrastLabel"` to your Cartfile
 
 ## Swift versions support
 
-Releases before 1.0.5 support Swift3. All releases from 1.0.5 support Swift4.
+Releases before 1.0.5 support Swift3. Release 1.0.5 supports Swift4. All releases from 1.0.6 support Swift5.
 
 ## Usage 
 

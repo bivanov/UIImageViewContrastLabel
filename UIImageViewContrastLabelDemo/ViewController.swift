@@ -28,11 +28,6 @@ class ViewController: UIViewController {
         }
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func animateContrastLabel() {
         let animation = CABasicAnimation(keyPath: #keyPath(CATextLayer.position))

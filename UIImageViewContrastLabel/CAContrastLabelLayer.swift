@@ -73,7 +73,7 @@ public class CAContrastLabelLayer: CALayer {
         
         self.textPosition = CGPoint.zero
         self.textLayer.foregroundColor = UIColor.black.cgColor
-        self.textLayer.alignmentMode = kCAAlignmentCenter
+        self.textLayer.alignmentMode = CATextLayerAlignmentMode.center
         self.mask = self.textLayer
     }
     
@@ -89,9 +89,9 @@ public class CAContrastLabelLayer: CALayer {
         if let text = self.text as NSString?,
             let font = self.font {
             
-            let attributes: [NSAttributedStringKey: Any] =
-                [NSAttributedStringKey.font: font,
-                 NSAttributedStringKey.foregroundColor: UIColor.black.cgColor]
+            let attributes: [NSAttributedString.Key: Any] =
+                [NSAttributedString.Key.font: font,
+                 NSAttributedString.Key.foregroundColor: UIColor.black.cgColor]
             
             let bounds = text.boundingRect(with: self.frame.size,
                                            options: .usesLineFragmentOrigin,
